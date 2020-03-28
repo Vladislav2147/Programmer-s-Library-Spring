@@ -1,17 +1,28 @@
 package com.shichko.library.entity.book;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.util.Collection;
+
+@Entity
+@Table(name = "publisher")
 @Data
-@NoArgsConstructor
 public class Publisher {
 
+    @Id
+    @Column
     private int id;
+    @Column
     private String name;
+    @Enumerated(EnumType.STRING)
     private Country country;
+    @Column
     private String address;
+    @Column(name = "post_code")
     private String postCode;
+    @Column
     private String email;
-
+    @OneToMany(mappedBy = "publisher")
+    Collection<Book> books;
 }
