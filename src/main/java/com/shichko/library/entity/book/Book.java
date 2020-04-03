@@ -14,7 +14,7 @@ import java.util.Collection;
 public class Book {
     @Id
     @Column
-    private int id;
+    private Long id;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)

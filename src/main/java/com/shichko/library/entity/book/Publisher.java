@@ -12,7 +12,7 @@ public class Publisher {
 
     @Id
     @Column
-    private int id;
+    private Long id;
     @Column
     private String name;
     @Enumerated(EnumType.STRING)

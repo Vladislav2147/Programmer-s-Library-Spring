@@ -12,7 +12,7 @@ public class Photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private long id;
+    private Long id;
     @Lob
     @Column(nullable = false)
     private byte[] photo;

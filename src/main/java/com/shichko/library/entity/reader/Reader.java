@@ -12,7 +12,7 @@ public class Reader {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
     @Column(name = "first_name", nullable = false)
     private String firstName;
     @Column(name = "second_name", nullable = false)
@@ -29,5 +29,4 @@ public class Reader {
     @OneToOne()
     @JoinColumn(name = "book_id")
     private Book book;
-
 }
