@@ -3,12 +3,14 @@ package com.shichko.library.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "photo")
 @Data
-public class Photo {
+public class Photo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -16,6 +18,7 @@ public class Photo {
     @Lob
     @Column(nullable = false)
     private byte[] photo;
+    @Size(min = 3, max = 50)
     @Column
     private String name;
     @Column

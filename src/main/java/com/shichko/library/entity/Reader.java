@@ -3,12 +3,13 @@ package com.shichko.library.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
 @Table(name = "reader")
 @Data
-public class Reader {
+public class Reader implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

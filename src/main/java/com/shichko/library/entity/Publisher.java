@@ -4,12 +4,13 @@ import com.shichko.library.entity.enums.Country;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
 @Table(name = "publisher")
 @Data
-public class Publisher {
+public class Publisher implements Serializable {
 
     @Id
     @Column
