@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -28,6 +29,7 @@ public class Book implements Serializable {
     @ManyToOne()
     @JoinColumn(name = "publisher_id")
     private Publisher publisher;
+    @PastOrPresent
     @Column(name = "publishing_date")
     private LocalDate publishingDate;
     @Min(value = 0)

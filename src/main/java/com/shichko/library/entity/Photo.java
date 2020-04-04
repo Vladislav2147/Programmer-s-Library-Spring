@@ -23,6 +23,7 @@ public class Photo implements Serializable {
     private String name;
     @Column
     private LocalDate date;
+    @Size(max = 255)
     @Column
     private String comment;
     @ManyToOne
