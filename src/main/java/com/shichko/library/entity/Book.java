@@ -1,7 +1,6 @@
-package com.shichko.library.entity.book;
+package com.shichko.library.entity;
 
 
-import com.shichko.library.entity.reader.Reader;
 import lombok.Data;
 
 import javax.persistence.*;

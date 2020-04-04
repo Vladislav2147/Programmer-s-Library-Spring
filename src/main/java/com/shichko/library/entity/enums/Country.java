@@ -1,4 +1,4 @@
-package com.shichko.library.entity.book;
+package com.shichko.library.entity.enums;
 
 public enum Country {
     Afghanistan, Albania, Algeria, Andorra, Angola, AntiguaDeps, Argentina, Armenia, Australia, Austria, Azerbaijan,

@@ -1,4 +1,4 @@
-package com.shichko.library.entity.book;
+package com.shichko.library.entity;
 
 import lombok.Data;
 

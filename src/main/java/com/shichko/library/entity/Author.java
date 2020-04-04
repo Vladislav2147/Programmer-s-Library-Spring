@@ -1,5 +1,6 @@
-package com.shichko.library.entity.book;
+package com.shichko.library.entity;
 
+import com.shichko.library.entity.enums.Gender;
 import lombok.Data;
 
 import javax.persistence.*;

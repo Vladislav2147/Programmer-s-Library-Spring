@@ -1,6 +1,5 @@
-package com.shichko.library.entity.reader;
+package com.shichko.library.entity;
 
-import com.shichko.library.entity.book.Book;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,7 +18,7 @@ public class Reader {
     private String secondName;
     @Column(name = "birth_year")
     private int birthYear;
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
     @Column(name = "phone")
     private String phone;

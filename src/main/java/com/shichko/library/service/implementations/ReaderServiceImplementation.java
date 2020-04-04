@@ -1,7 +1,8 @@
-package com.shichko.library.service;
+package com.shichko.library.service.implementations;
 
-import com.shichko.library.entity.reader.Reader;
+import com.shichko.library.entity.Reader;
 import com.shichko.library.repository.ReaderRepository;
+import com.shichko.library.service.ReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

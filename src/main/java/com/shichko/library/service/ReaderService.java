@@ -1,6 +1,6 @@
 package com.shichko.library.service;
 
-import com.shichko.library.entity.reader.Reader;
+import com.shichko.library.entity.Reader;
 
 import java.util.List;
 import java.util.Optional;
