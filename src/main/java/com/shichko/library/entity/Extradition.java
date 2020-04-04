@@ -1,11 +1,13 @@
 package com.shichko.library.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import javax.validation.constraints.PastOrPresent;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-
+@Data
 @Entity
 @Table(name = "extradition")
 public class Extradition implements Serializable {
