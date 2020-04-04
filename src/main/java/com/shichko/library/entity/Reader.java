@@ -3,6 +3,8 @@ package com.shichko.library.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Collection;
+
 @Entity
 @Table(name = "reader")
 @Data
@@ -25,7 +27,7 @@ public class Reader {
     @Lob
     @Column(columnDefinition = "blob")
     private byte[] photo;
-    @OneToOne()
-    @JoinColumn(name = "book_id")
-    private Book book;
+    @OneToMany(mappedBy = "reader")
+    private Collection<Extradition> extraditions;
+
 }

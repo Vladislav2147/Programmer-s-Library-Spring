@@ -12,6 +12,7 @@ import java.util.Collection;
 @Data
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private Long id;
     @Column(nullable = false)
@@ -32,7 +33,7 @@ public class Book {
     private Collection<Author> authors;
     @OneToMany(mappedBy = "book")
     private Collection<Photo> photos;
-    @OneToOne(mappedBy = "book")
-    private Reader reader;
+    @OneToMany(mappedBy = "book")
+    private Collection<Extradition> extraditions;
 
 }
