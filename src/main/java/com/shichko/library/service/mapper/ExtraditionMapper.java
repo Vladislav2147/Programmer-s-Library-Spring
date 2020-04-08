@@ -10,6 +10,8 @@ public interface ExtraditionMapper {
 
     ExtraditionMapper INSTANCE = Mappers.getMapper(ExtraditionMapper.class);
 
+
     ExtraditionDto extraditionToExtraditionDto(Extradition extradition);
+
 
 }

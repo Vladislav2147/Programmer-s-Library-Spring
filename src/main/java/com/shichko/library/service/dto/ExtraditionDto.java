@@ -14,7 +14,7 @@ public class ExtraditionDto {
     private LocalDate term;
     @PastOrPresent
     private LocalDate returned;
-    private ReaderDto reader;
-    private BookDto book;
+    private Long readerId;
+    private Long bookId;
 
 }

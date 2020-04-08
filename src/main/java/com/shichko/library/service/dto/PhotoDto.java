@@ -15,6 +15,6 @@ public class PhotoDto {
     private LocalDate date;
     @Size(max = 255)
     private String comment;
-    private BookDto book;
+    private Long bookId;
 
 }

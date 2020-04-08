@@ -20,6 +20,6 @@ public class AuthorDto {
     private Gender gender;
     @Size(max = 255)
     private String note;
-    Collection<BookDto> books;
+    Collection<Long> booksId;
 
 }

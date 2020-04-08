@@ -4,33 +4,33 @@ import com.shichko.library.service.BookService;
 import com.shichko.library.service.dto.BookDto;
 import com.shichko.library.service.mapper.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("books")
 class BookController {
+
+    private final BookMapper bookMapper;
     private final BookService bookService;
-//    @Value("${welcome.message}")
-//    private String message;
-//    @Value("${error.message}")
-//    private String errorMessage;
+
     @Autowired
-    public BookController(BookService bookService) {
+    public BookController(BookService bookService, BookMapper bookMapper) {
         this.bookService = bookService;
+        this.bookMapper = bookMapper;
 
     }
 
-//    @GetMapping(value = {"/all"})
-//    public List<BookDto> personList() {
-//        return BookMapper.mapAll(bookService.getAllBooks(), BookDto.class);
-//    }
+    @GetMapping(value = {"/all"})
+    public List<BookDto> bookList() {
+        return bookMapper.booksToBookDtos(bookService.getAllBooks());
+    }
     @GetMapping(value = {"/{id}"})
     public BookDto findById(@PathVariable("id") Long id) {
-//        System.out.println(bookService.getById(id).get().getExtraditions().stream().findFirst().get().);
-        return BookMapper.INSTANCE.bookToBookDto(bookService.getById(id).get());
+        return bookMapper.bookToBookDto(bookService.getById(id).get());
     }
 //    @PutMapping(value = "/edit/{id}")
 //    @ResponseStatus(HttpStatus.OK)
@@ -39,11 +39,11 @@ class BookController {
 //        personService.getById(id);
 //        personService.editPerson(Mapper.map(persondto, Person.class),id);
 //    }
-//    @PostMapping("/add")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public void savePerson( @Valid @RequestBody NewPersonDto personDto) {
-//        personService.addNewPerson(Mapper.map(personDto, Person.class));
-//    }
+    @PostMapping("/add")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void savePerson( @Valid @RequestBody BookDto bookDto) {
+        bookService.addNewBook(bookMapper.bookDtoToBook(bookDto));
+    }
 //    @DeleteMapping(value = "/delete/{id}")
 //    @ResponseStatus(HttpStatus.OK)
 //    public void deletePerson(@PathVariable("id") Long id) throws

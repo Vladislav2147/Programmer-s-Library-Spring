@@ -12,9 +12,6 @@ public class YearValidator implements ConstraintValidator<Year, Integer> {
 
     @Override
     public boolean isValid(Integer year, ConstraintValidatorContext constraintValidatorContext) {
-        if (year > 0 && year < Calendar.getInstance().get(Calendar.YEAR)) {
-            return true;
-        }
-        return false;
+        return year > 0 && year <= Calendar.getInstance().get(Calendar.YEAR);
     }
 }
