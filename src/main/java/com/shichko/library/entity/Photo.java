@@ -16,7 +16,7 @@ public class Photo extends AbstractEntity implements Serializable {
     @Column(nullable = false)
     private byte[] photo;
     @Size(min = 3, max = 50)
-    @Column
+    @Column(unique = true)
     private String name;
     @Column
     private LocalDate date;

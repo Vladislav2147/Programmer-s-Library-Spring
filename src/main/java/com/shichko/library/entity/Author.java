@@ -10,8 +10,9 @@ import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
-@Table(name = "author")
+@Table(name = "author", uniqueConstraints = {@UniqueConstraint(columnNames = {"first_name", "second_name"})})
 @Data
+
 public class Author extends AbstractEntity implements Serializable {
 
     @Size(min = 3, max = 25)

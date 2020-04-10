@@ -3,7 +3,6 @@ package com.shichko.library.service.implementations;
 import com.shichko.library.entity.AbstractEntity;
 import com.shichko.library.repository.CommonRepository;
 import com.shichko.library.service.CommonService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +11,6 @@ public class AbstractService<E extends AbstractEntity, R extends CommonRepositor
 
     final private R repository;
 
-    @Autowired
     public AbstractService(R repository) {
         this.repository = repository;
     }

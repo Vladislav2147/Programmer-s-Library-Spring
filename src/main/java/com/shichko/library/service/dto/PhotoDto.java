@@ -6,9 +6,8 @@ import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Data
-public class PhotoDto {
+public class PhotoDto extends AbstractDto {
 
-    private Long id;
     private byte[] photo;
     @Size(min = 3, max = 50)
     private String name;

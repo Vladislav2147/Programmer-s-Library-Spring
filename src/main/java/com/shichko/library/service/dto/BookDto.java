@@ -2,7 +2,6 @@ package com.shichko.library.service.dto;
 
 import com.shichko.library.validator.Year;
 import lombok.Data;
-import org.springframework.lang.Nullable;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.PastOrPresent;
@@ -11,14 +10,13 @@ import java.time.LocalDate;
 import java.util.Collection;
 
 @Data
-public class BookDto {
-    @Nullable
-    private Long id;
+public class BookDto extends AbstractDto {
+
     @Size(max = 50)
     private String name;
     @Year
     private int year;
-    private Long publisherId;
+    private String publisherName;
     @PastOrPresent
     private LocalDate publishingDate;
     @Min(value = 0)

@@ -32,7 +32,7 @@ public class Reader extends AbstractEntity implements Serializable {
     @Lob
     @Column(columnDefinition = "blob")
     private byte[] photo;
-    @OneToMany(mappedBy = "reader")
+    @OneToMany(mappedBy = "reader", cascade = CascadeType.ALL)
     private Collection<Extradition> extraditions;
 
 }

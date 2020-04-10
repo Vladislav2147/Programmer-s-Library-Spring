@@ -18,7 +18,7 @@ import java.util.Collection;
 public class Book extends AbstractEntity implements Serializable {
 
     @Size(max = 50)
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
     @Year
     @Column(nullable = false)
@@ -37,9 +37,9 @@ public class Book extends AbstractEntity implements Serializable {
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Collection<Author> authors;
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private Collection<Photo> photos;
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private Collection<Extradition> extraditions;
 
 }

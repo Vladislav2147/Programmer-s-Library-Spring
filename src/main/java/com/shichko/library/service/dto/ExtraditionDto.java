@@ -6,9 +6,8 @@ import javax.validation.constraints.PastOrPresent;
 import java.time.LocalDate;
 
 @Data
-public class ExtraditionDto {
+public class ExtraditionDto extends AbstractDto {
 
-    private Long id;
     @PastOrPresent
     private LocalDate issuance;
     private LocalDate term;

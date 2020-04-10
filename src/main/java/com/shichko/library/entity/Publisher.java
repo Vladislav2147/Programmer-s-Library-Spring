@@ -15,7 +15,7 @@ import java.util.Collection;
 public class Publisher extends AbstractEntity implements Serializable {
 
     @Size(min = 3, max = 30)
-    @Column
+    @Column(unique = true)
     private String name;
     @Enumerated(EnumType.STRING)
     private Country country;
@@ -28,6 +28,6 @@ public class Publisher extends AbstractEntity implements Serializable {
     @Email
     @Column
     private String email;
-    @OneToMany(mappedBy = "publisher")
+    @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL)
     Collection<Book> books;
 }

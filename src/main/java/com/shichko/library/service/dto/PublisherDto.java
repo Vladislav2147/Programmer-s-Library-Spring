@@ -8,9 +8,8 @@ import javax.validation.constraints.Size;
 import java.util.Collection;
 
 @Data
-public class PublisherDto {
+public class PublisherDto extends AbstractDto {
 
-    private Long id;
     @Size(min = 3, max = 30)
     private String name;
     private Country country;
