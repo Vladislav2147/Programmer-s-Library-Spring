@@ -12,12 +12,8 @@ import java.util.Collection;
 @Entity
 @Table(name = "reader")
 @Data
-public class Reader implements Serializable {
+public class Reader extends AbstractEntity implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
     @Size(min = 3, max = 25)
     @Column(name = "first_name", nullable = false)
     private String firstName;

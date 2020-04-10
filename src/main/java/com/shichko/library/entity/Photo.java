@@ -10,11 +10,8 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "photo")
 @Data
-public class Photo implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    private Long id;
+public class Photo extends AbstractEntity implements Serializable {
+
     @Lob
     @Column(nullable = false)
     private byte[] photo;

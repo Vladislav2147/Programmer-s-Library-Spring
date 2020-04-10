@@ -12,11 +12,8 @@ import java.util.Collection;
 @Entity
 @Table(name = "publisher")
 @Data
-public class Publisher implements Serializable {
+public class Publisher extends AbstractEntity implements Serializable {
 
-    @Id
-    @Column
-    private Long id;
     @Size(min = 3, max = 30)
     @Column
     private String name;

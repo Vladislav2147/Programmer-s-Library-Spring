@@ -10,10 +10,8 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name = "extradition")
-public class Extradition implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Extradition extends AbstractEntity implements Serializable {
+
     @PastOrPresent
     @Column(nullable = false)
     private LocalDate issuance;

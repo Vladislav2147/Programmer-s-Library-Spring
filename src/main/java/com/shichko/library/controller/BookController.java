@@ -1,7 +1,7 @@
 package com.shichko.library.controller;
 
-import com.shichko.library.service.BookService;
 import com.shichko.library.service.dto.BookDto;
+import com.shichko.library.service.implementations.BookServiceImplementation;
 import com.shichko.library.service.mapper.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,10 +15,10 @@ import java.util.List;
 class BookController {
 
     private final BookMapper bookMapper;
-    private final BookService bookService;
+    private final BookServiceImplementation bookService;
 
     @Autowired
-    public BookController(BookService bookService, BookMapper bookMapper) {
+    public BookController(BookServiceImplementation bookService, BookMapper bookMapper) {
         this.bookService = bookService;
         this.bookMapper = bookMapper;
 
@@ -26,7 +26,7 @@ class BookController {
 
     @GetMapping(value = {"/all"})
     public List<BookDto> bookList() {
-        return bookMapper.booksToBookDtos(bookService.getAllBooks());
+        return bookMapper.booksToBookDtos(bookService.getAll());
     }
     @GetMapping(value = {"/{id}"})
     public BookDto findById(@PathVariable("id") Long id) {
@@ -42,7 +42,7 @@ class BookController {
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public void savePerson( @Valid @RequestBody BookDto bookDto) {
-        bookService.addNewBook(bookMapper.bookDtoToBook(bookDto));
+        bookService.addNew(bookMapper.bookDtoToBook(bookDto));
     }
 //    @DeleteMapping(value = "/delete/{id}")
 //    @ResponseStatus(HttpStatus.OK)

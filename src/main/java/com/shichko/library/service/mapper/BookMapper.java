@@ -2,7 +2,6 @@ package com.shichko.library.service.mapper;
 
 import com.shichko.library.entity.Book;
 import com.shichko.library.entity.Publisher;
-import com.shichko.library.service.BookService;
 import com.shichko.library.service.dto.BookDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Mapper(componentModel = "spring", uses = BookService.class)
+@Mapper(componentModel = "spring")
 public interface BookMapper {
 
     @Mapping(source = "publisher", target = "publisherId", qualifiedByName = "publisherToPublisherId")
