@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {AuthorMapper.class, ExtraditionMapper.class, PhotoMapper.class})
 public interface BookMapper extends CommonMapper<Book, BookDto> {
 
     @Override

@@ -16,7 +16,7 @@ public interface AuthorMapper extends CommonMapper<Author, AuthorDto> {
     @Override
     @Mapping(source = "books", target = "booksId", qualifiedByName = "bookToBookId")
     AuthorDto entityToDto(Author author);
-    
+
     @Named("bookToBookId")
     default Long bookToBookId(Book book) {
         return book.getId();
