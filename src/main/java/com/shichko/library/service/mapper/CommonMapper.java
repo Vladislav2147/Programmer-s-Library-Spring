@@ -6,6 +6,7 @@ import com.shichko.library.service.dto.AbstractDto;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public interface CommonMapper<E extends AbstractEntity, D extends AbstractDto> {
 
     D entityToDto(E entity);
