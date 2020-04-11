@@ -21,8 +21,8 @@ public class BookDto extends AbstractDto {
     private LocalDate publishingDate;
     @Min(value = 0)
     private int copiesAmount;
-    private Collection<AuthorDto> authors;
-    private Collection<PhotoDto> photos;
-    private Collection<ExtraditionDto> extraditions;
+    private Collection<Long> authorsId;
+    private Collection<Long> photosId;
+    private Collection<Long> extraditionsId;
 
 }

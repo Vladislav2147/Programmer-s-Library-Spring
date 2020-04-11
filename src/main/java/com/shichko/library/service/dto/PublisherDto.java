@@ -19,6 +19,6 @@ public class PublisherDto extends AbstractDto {
     private String postCode;
     @Email
     private String email;
-    Collection<BookDto> books;
+    Collection<Long> booksId;
 
 }

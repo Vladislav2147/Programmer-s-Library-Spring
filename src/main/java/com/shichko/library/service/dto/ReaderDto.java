@@ -22,6 +22,6 @@ public class ReaderDto extends AbstractDto {
     private String phone;
     private byte[] photo;
 
-    private Collection<ExtraditionDto> extraditions;
+    private Collection<Long> extraditionsId;
 
 }
