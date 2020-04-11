@@ -12,10 +12,10 @@ import java.util.List;
 
 
 public abstract class AbstractController<M extends CommonMapper<E, D>, S extends CommonService<E>, D extends AbstractDto, E extends AbstractEntity> {
-    private final CommonMapper mapper;
-    private final CommonService service;
+    protected final M mapper;
+    protected final S service;
 
-    public AbstractController(CommonService service, CommonMapper mapper) {
+    public AbstractController(S service, M mapper) {
         this.service = service;
         this.mapper = mapper;
 
@@ -27,7 +27,7 @@ public abstract class AbstractController<M extends CommonMapper<E, D>, S extends
     }
     @GetMapping(value = {"/{id}"})
     public D findById(@PathVariable("id") Long id) {
-        return (D)mapper.entityToDto((E)service.getById(id).get());
+        return mapper.entityToDto(service.getById(id).get());
     }
     @PutMapping(value = "/edit/{id}")
     @ResponseStatus(HttpStatus.OK)
@@ -43,6 +43,6 @@ public abstract class AbstractController<M extends CommonMapper<E, D>, S extends
     @DeleteMapping(value = "/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable("id") Long id) {
-        service.delete((E)service.getById(id).get());
+        service.delete(service.getById(id).get());
     }
 }

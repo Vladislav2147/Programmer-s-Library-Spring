@@ -9,10 +9,10 @@ import javax.transaction.Transactional;
 
 @Service
 @Transactional
-public class ReaderServiceImpl extends AbstractService<Reader, ReaderRepository> {
+public class ReaderService extends AbstractService<Reader, ReaderRepository> {
 
     @Autowired
-    public ReaderServiceImpl(ReaderRepository readerRepository) {
+    public ReaderService(ReaderRepository readerRepository) {
         super(readerRepository);
     }
 

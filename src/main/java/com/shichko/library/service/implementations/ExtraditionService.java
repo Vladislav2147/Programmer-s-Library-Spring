@@ -8,9 +8,9 @@ import javax.transaction.Transactional;
 
 @Service
 @Transactional
-public class ExtraditionServiceImpl extends AbstractService<Extradition, ExtraditionRepository> {
+public class ExtraditionService extends AbstractService<Extradition, ExtraditionRepository> {
 
-    public ExtraditionServiceImpl(ExtraditionRepository repository) {
+    public ExtraditionService(ExtraditionRepository repository) {
         super(repository);
     }
 
