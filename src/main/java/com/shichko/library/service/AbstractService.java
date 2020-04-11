@@ -1,8 +1,7 @@
-package com.shichko.library.service.implementations;
+package com.shichko.library.service;
 
 import com.shichko.library.entity.AbstractEntity;
 import com.shichko.library.repository.CommonRepository;
-import com.shichko.library.service.CommonService;
 
 import java.util.List;
 import java.util.Optional;

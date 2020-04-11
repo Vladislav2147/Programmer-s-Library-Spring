@@ -2,6 +2,7 @@ package com.shichko.library.service.implementations;
 
 import com.shichko.library.entity.Book;
 import com.shichko.library.repository.BookRepository;
+import com.shichko.library.service.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
