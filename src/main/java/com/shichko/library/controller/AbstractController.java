@@ -4,18 +4,17 @@ import com.shichko.library.entity.AbstractEntity;
 import com.shichko.library.service.CommonService;
 import com.shichko.library.service.dto.AbstractDto;
 import com.shichko.library.service.mapper.CommonMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
-public class AbstractController<M extends CommonMapper<E, D>, S extends CommonService<E>, D extends AbstractDto, E extends AbstractEntity> {
+
+public abstract class AbstractController<M extends CommonMapper<E, D>, S extends CommonService<E>, D extends AbstractDto, E extends AbstractEntity> {
     private final CommonMapper mapper;
     private final CommonService service;
 
-    @Autowired
     public AbstractController(CommonService service, CommonMapper mapper) {
         this.service = service;
         this.mapper = mapper;

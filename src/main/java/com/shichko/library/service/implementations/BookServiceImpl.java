@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 @Service
 @Transactional
-public class BookServiceImplementation extends AbstractService<Book, BookRepository> {
+public class BookServiceImpl extends AbstractService<Book, BookRepository> {
 
     @Autowired
-    public BookServiceImplementation(BookRepository bookRepository) {
+    public BookServiceImpl(BookRepository bookRepository) {
         super(bookRepository);
     }
 

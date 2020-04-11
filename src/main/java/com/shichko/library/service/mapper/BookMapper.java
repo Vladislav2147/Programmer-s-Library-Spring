@@ -12,10 +12,10 @@ import org.mapstruct.Named;
 public interface BookMapper extends CommonMapper<Book, BookDto> {
 
     @Override
-    @Mapping(source = "publisher", target = "publisherName", qualifiedByName = "publisherToPublisherId")
+    @Mapping(source = "publisher", target = "publisherId", qualifiedByName = "publisherToPublisherId")
     BookDto entityToDto(Book book);
     @Override
-    @Mapping(source = "publisherName", target = "publisher", qualifiedByName = "publicherIdToPublisher")
+    @Mapping(source = "publisherId", target = "publisher", qualifiedByName = "publisherIdToPublisher")
     Book dtoToEntity(BookDto bookDto);
 
 

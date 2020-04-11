@@ -16,7 +16,7 @@ public class BookDto extends AbstractDto {
     private String name;
     @Year
     private int year;
-    private String publisherName;
+    private String publisherId;
     @PastOrPresent
     private LocalDate publishingDate;
     @Min(value = 0)
