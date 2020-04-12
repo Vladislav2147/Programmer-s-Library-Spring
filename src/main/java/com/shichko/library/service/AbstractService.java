@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class AbstractService<E extends AbstractEntity, R extends CommonRepository<E>> implements CommonService<E> {
 
-    final private R repository;
+    final protected R repository;
 
     public AbstractService(R repository) {
         this.repository = repository;

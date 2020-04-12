@@ -23,5 +23,6 @@ public class ReaderDto extends AbstractDto {
     private byte[] photo;
 
     private Collection<Long> extraditionsId;
+    private String password;
 
 }

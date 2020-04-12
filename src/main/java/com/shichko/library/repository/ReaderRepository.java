@@ -12,5 +12,5 @@ public interface ReaderRepository extends CommonRepository<Reader> {
 
     @Query("select e.reader from Extradition e where e.book = :book")
     Optional<Reader> findByBook(@Param("book") Book book);
-
+    Reader findByEmail(String email);
 }
