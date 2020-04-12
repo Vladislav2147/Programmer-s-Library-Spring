@@ -34,5 +34,8 @@ public class Reader extends AbstractEntity implements Serializable {
     private byte[] photo;
     @OneToMany(mappedBy = "reader", cascade = CascadeType.ALL)
     private Collection<Extradition> extraditions;
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
 
 }
